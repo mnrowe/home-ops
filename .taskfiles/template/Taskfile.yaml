@@ -120,16 +120,16 @@ tasks:
       - test -f {{.TALOS_DIR}}/talconfig.yaml
       - which talhelper
 
-  debug:
-    desc: Gather common resources in your cluster
-    cmds:
-      - for:
-          matrix:
-            RESOURCE: [certificates, certificaterequests, gitrepositories, helmrepositories, helmreleases, ingresses, kustomizations, nodes, pods]
-        cmd: kubectl get --all-namespaces {{.ITEM.RESOURCE}}
-    preconditions:
-      - test -f {{.KUBECONFIG}}
-      - which kubectl
+  # debug:
+  #   desc: Gather common resources in your cluster
+  #   cmds:
+  #     - for:
+  #         matrix:
+  #           RESOURCE: [certificates, certificaterequests, gitrepositories, helmrepositories, helmreleases, ingresses, kustomizations, nodes, pods]
+  #       cmd: kubectl get --all-namespaces {{.ITEM.RESOURCE}}
+  #   preconditions:
+  #     - test -f {{.KUBECONFIG}}
+  #     - which kubectl
 
   tidy:
     desc: Archive template related files and directories
