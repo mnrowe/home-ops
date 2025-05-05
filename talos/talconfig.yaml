@@ -21,15 +21,14 @@ cniConfig:
 nodes:
   - hostname: "talos-cp-01"
     ipAddress: "192.168.5.105"
-    installDiskSelector:
-      serial: "vda"
+    installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:db:db:63"
+          hardwareAddr: "bc:24:11:40:6f:dc"
         dhcp: false
         addresses:
           - "192.168.5.105/24"
@@ -39,17 +38,16 @@ nodes:
         mtu: 1500
         vip:
           ip: "192.168.5.4"
-  - hostname: "talos-worker"
+  - hostname: "talos-worker-01"
     ipAddress: "192.168.5.106"
-    installDiskSelector:
-      serial: "vda"
+    installDisk: "/dev/sda"
     machineSpec:
       secureboot: false
-    talosImageURL: factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515
+    talosImageURL: factory.talos.dev/installer/376567988ad370138ad8b2698212367b8edcb69b5fd68c80be1f2ec7d603b4ba
     controlPlane: false
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "bc:24:11:a4:40:67"
+          hardwareAddr: "bc:24:11:01:86:80"
         dhcp: false
         addresses:
           - "192.168.5.106/24"
